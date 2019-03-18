@@ -5,6 +5,6 @@ import utils.UtilityFunctions;
 
 public class HealthCheckController {
     public static void healthCheck(RoutingContext context) {
-        UtilityFunctions.sendSuccess(context.response(), "abc");
+        UtilityFunctions.sendSuccess(context.response(), "welcome");
     }
 } 
