@@ -76,17 +76,14 @@ public class MyFirstVerticle extends AbstractVerticle {
         router.route().handler(routingContext -> {
             System.out.println("Started API : " + routingContext.request().method() +
                     " " + routingContext.request().path());
-            System.out.println("inside first if ");
             if (routingContext.getBodyAsString() != null) {
                 System.out.println("Request body is " + routingContext.getBodyAsString());
             }
-            System.out.println("inside 2nd if");
 
             if (routingContext.request() != null && routingContext.request().query() != null) {
                 System.out.println("Request query are " + routingContext.request().query());
             }
             routingContext.next();
         });
-        System.out.println("outside if");
     }
 } 
