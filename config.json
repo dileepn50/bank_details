@@ -1,0 +1,9 @@
+{
+  "port": 8080,
+
+  "psql_host": "localhost",
+  "psql_port": 5432,
+  "psql_user": "dileepn_user",
+  "psql_password": "dileepn_password",
+  "psql_database": "indian_banks"
+}
