@@ -14,6 +14,7 @@ import io.vertx.rxjava.ext.sql.SQLConnection;
 import rx.Single;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class BasicDao {
     private static SQLClient sqlClient;
@@ -35,7 +36,7 @@ public class BasicDao {
     }
 
     private static Single<ResultSet> rxQuery(String query, JsonArray params) {
-        return sqlClient.rxQueryWithParams(query, params);
+        return sqlClient.rxQueryWithParams(query, params).timeout(1000, TimeUnit.SECONDS);
     }
 
     static Single<JsonObject> findOne(String query, JsonArray params) {
