@@ -28,7 +28,7 @@ public class MyFirstVerticle extends AbstractVerticle {
         options.setCompressionSupported(true);
         HttpServer server = vertx.createHttpServer(options);
 //        server.requestHandler(router::accept).listen(config().getInteger("port"));
-	 server.requestHandler(router::accept).listen(8080);
+	 server.requestHandler(router::accept);
 
         super.start(startFuture);
     }
