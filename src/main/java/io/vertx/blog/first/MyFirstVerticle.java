@@ -19,7 +19,7 @@ public class MyFirstVerticle extends AbstractVerticle {
     public void start(Future<Void> startFuture) throws Exception {
         Router router = Router.router(vertx);
 
-//        BasicDao.createJDBCClient(config());
+        BasicDao.createJDBCClient(config());
 
         prepareRoutes(router);
 
