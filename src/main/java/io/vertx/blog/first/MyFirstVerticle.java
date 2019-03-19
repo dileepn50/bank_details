@@ -26,10 +26,12 @@ public class MyFirstVerticle extends AbstractVerticle {
         // Start the server
         HttpServerOptions options = new HttpServerOptions();
         options.setCompressionSupported(true);
-        System.out.println("port " + Integer.getInteger("http.port"));
+        Integer port = Integer.valueOf(System.getenv("PORT"));
+        System.out.println("port + " + port);
+
         System.out.println("http.address " + System.getProperty("http.address", "0.0.0.0"));
 
-        vertx.createHttpServer().requestHandler(router::accept).listen(Integer.valueOf(System.getenv("PORT")), System.getProperty("http.address", "0.0.0.0"));
+        vertx.createHttpServer().requestHandler(router::accept).listen(port, System.getProperty("http.address", "0.0.0.0"));
         //HttpServer server = vertx.createHttpServer(options);
        // System.out.println("server = " + server);
         //server.requestHandler(router::accept).listen(config().getInteger("port"));
