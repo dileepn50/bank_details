@@ -19,7 +19,7 @@ public class MyFirstVerticle extends AbstractVerticle {
     public void start(Future<Void> startFuture) throws Exception {
         Router router = Router.router(vertx);
 
-        BasicDao.createJDBCClient(config());
+//        BasicDao.createJDBCClient(config());
 
         prepareRoutes(router);
 
@@ -27,7 +27,8 @@ public class MyFirstVerticle extends AbstractVerticle {
         HttpServerOptions options = new HttpServerOptions();
         options.setCompressionSupported(true);
         HttpServer server = vertx.createHttpServer(options);
-        server.requestHandler(router::accept).listen(config().getInteger("port"));
+//        server.requestHandler(router::accept).listen(config().getInteger("port"));
+	 server.requestHandler(router::accept).listen(8080);
 
         super.start(startFuture);
     }
