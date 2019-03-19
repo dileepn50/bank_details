@@ -26,6 +26,8 @@ public class MyFirstVerticle extends AbstractVerticle {
         // Start the server
         HttpServerOptions options = new HttpServerOptions();
         options.setCompressionSupported(true);
+        System.out.println("port " + Integer.getInteger("http.port"));
+        System.out.println("http.address " + System.getProperty("http.address", "0.0.0.0"));
 
         vertx.createHttpServer().requestHandler(req -> req.response().end("Hello World!"))
                 .listen(
