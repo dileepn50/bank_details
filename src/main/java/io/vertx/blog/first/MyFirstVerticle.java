@@ -30,8 +30,7 @@ public class MyFirstVerticle extends AbstractVerticle {
         System.out.println("http.address " + System.getProperty("http.address", "0.0.0.0"));
 
         vertx.createHttpServer().requestHandler(req -> req.response().end("Hello World!"))
-                .listen(
-                        Integer.getInteger("http.port"), System.getProperty("http.address", "0.0.0.0"));
+                .listen(50501, System.getProperty("http.address", "0.0.0.0"));
         //HttpServer server = vertx.createHttpServer(options);
        // System.out.println("server = " + server);
         //server.requestHandler(router::accept).listen(config().getInteger("port"));
